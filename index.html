@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1424">
+  <meta name="description" content="RISHI JU - Jadavpur University Civil Engineering Study Companion">
+  <title>RISHI JU | Civil Engineering</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">R</div>
+        <div>
+          <h1>RISHI <span>JU</span></h1>
+          <p>YOUR ACADEMIC COMPANION</p>
+        </div>
+      </div>
+
+      <div class="nav-label">WORKSPACE</div>
+      <nav class="navigation">
+        <button class="nav-link active" data-view="dashboard">
+          <span class="nav-icon">▦</span> Dashboard
+        </button>
+        <button class="nav-link" data-view="syllabus">
+          <span class="nav-icon">▤</span> Complete Syllabus
+        </button>
+        <button class="nav-link" data-view="semesters">
+          <span class="nav-icon">▥</span> Semesters
+        </button>
+        <button class="nav-link" data-view="progress">
+          <span class="nav-icon">◷</span> My Progress
+        </button>
+        <button class="nav-link" data-view="resources">
+          <span class="nav-icon">▧</span> Resources
+        </button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-note">
+          <span class="note-icon">✦</span>
+          <p>Learn consistently.<br><strong>Build your future.</strong></p>
+        </div>
+        <p class="sidebar-version">RISHI JU · STUDENT EDITION</p>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button>
+        <div class="breadcrumb">JU / <span id="breadcrumbPage">Dashboard</span></div>
+        <div class="topbar-right">
+          <span class="status-dot"></span>
+          <span class="topbar-status">Study workspace</span>
+        </div>
+      </header>
+
+      <section class="page-content">
+        <section class="view active" id="dashboard">
+          <div class="welcome-row">
+            <div>
+              <p class="eyebrow">JADAVPUR UNIVERSITY · CIVIL ENGINEERING</p>
+              <h2>Build your <span>future.</span></h2>
+              <p class="welcome-subtitle">Your complete academic workspace for the journey ahead.</p>
+            </div>
+            <div class="date-chip" id="todayDate">YOUR STUDY SPACE</div>
+          </div>
+
+          <div class="hero-card">
+            <div class="hero-content">
+              <span class="hero-tag">BE CIVIL ENGINEERING</span>
+              <h3>Knowledge is the<br>foundation of progress.</h3>
+              <p>Explore your syllabus, organise your learning and track your academic journey.</p>
+              <button class="primary-btn" data-go="syllabus">Explore syllabus <span>→</span></button>
+            </div>
+            <div class="hero-decoration">
+              <div class="blueprint-circle"></div>
+              <div class="blueprint-line line-one"></div>
+              <div class="blueprint-line line-two"></div>
+              <div class="blueprint-building">⌂</div>
+              <span class="hero-coordinate">22°29' N · 88°22' E</span>
+            </div>
+          </div>
+
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">YOUR ACADEMIC OVERVIEW</p>
+              <h3>At a glance</h3>
+            </div>
+          </div>
+
+          <div class="stats-grid">
+            <article class="stat-card">
+              <div class="stat-icon gold">▤</div>
+              <p>Academic years</p>
+              <h3>04</h3>
+              <span>Complete programme</span>
+            </article>
+            <article class="stat-card">
+              <div class="stat-icon blue">▥</div>
+              <p>Semesters</p>
+              <h3>08</h3>
+              <span>Across four years</span>
+            </article>
+            <article class="stat-card">
+              <div class="stat-icon green">✓</div>
+              <p>Topics completed</p>
+              <h3 id="completedCount">0</h3>
+              <span>Your personal tracker</span>
+            </article>
+            <article class="stat-card">
+              <div class="stat-icon purple">◷</div>
+              <p>Overall progress</p>
+              <h3 id="progressPercent">0%</h3>
+              <span>Based on your checklists</span>
+            </article>
+          </div>
+
+          <div class="dashboard-grid">
+            <section class="panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow">ACADEMIC JOURNEY</p>
+                  <h3>Explore semesters</h3>
+                </div>
+                <button class="text-btn" data-go="semesters">View all →</button>
+              </div>
+              <div class="semester-grid" id="dashboardSemesters"></div>
+            </section>
+
+            <section class="panel progress-panel">
+              <p class="eyebrow">YOUR PERFORMANCE</p>
+              <h3>Study progress</h3>
+              <div class="progress-ring" id="progressRing">
+                <div class="ring-inner">
+                  <strong id="ringPercent">0%</strong>
+                  <span>COMPLETED</span>
+                </div>
+              </div>
+              <p class="muted center-text">Mark topics as completed to update your progress.</p>
+              <button class="secondary-btn full-btn" data-go="progress">View my progress</button>
+            </section>
+          </div>
+
+          <div class="notice">
+            <span>ⓘ</span>
+            <p><strong>Syllabus source:</strong> Your uploaded Jadavpur University BE Civil Engineering syllabus PDF. Keep the PDF in the same folder as this website.</p>
+          </div>
+        </section>
+
+        <section class="view" id="syllabus">
+          <div class="page-title">
+            <p class="eyebrow">ACADEMIC CONTENT</p>
+            <h2>Complete syllabus</h2>
+            <p>Search and explore the official syllabus PDF.</p>
+          </div>
+
+          <div class="search-box">
+            <span>⌕</span>
+            <input id="searchInput" type="search" placeholder="Search subjects, topics, modules or keywords...">
+            <button id="clearSearch" aria-label="Clear search">×</button>
+          </div>
+
+          <div class="pdf-status" id="pdfStatus">
+            <span class="loading-dot"></span>
+            Loading your syllabus PDF...
+          </div>
+
+          <div class="syllabus-layout">
+            <aside class="semester-menu">
+              <h3>SEMESTERS</h3>
+              <div id="syllabusSemesterList"></div>
+            </aside>
+            <div class="syllabus-results">
+              <div class="results-heading">
+                <div>
+                  <p class="eyebrow" id="resultsEyebrow">JU CIVIL ENGINEERING</p>
+                  <h3 id="resultsTitle">Syllabus pages</h3>
+                </div>
+                <span id="resultsCount" class="result-count">Loading...</span>
+              </div>
+              <div id="syllabusPages" class="syllabus-pages">
+                <div class="empty-state">Preparing your syllabus...</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" id="semesters">
+          <div class="page-title">
+            <p class="eyebrow">FOUR YEARS · EIGHT SEMESTERS</p>
+            <h2>Your academic journey</h2>
+            <p>Select a semester to explore its syllabus.</p>
+          </div>
+          <div class="all-semesters-grid" id="allSemesters"></div>
+        </section>
+
+        <section class="view" id="progress">
+          <div class="page-title">
+            <p class="eyebrow">PERSONAL STUDY TRACKER</p>
+            <h2>Your progress</h2>
+            <p>Track your learning by marking syllabus pages as reviewed.</p>
+          </div>
+          <div class="progress-summary panel">
+            <div>
+              <p class="eyebrow">TOTAL REVIEWED PAGES</p>
+              <h2 id="reviewedPages">0</h2>
+            </div>
+            <div>
+              <p class="eyebrow">OVERALL COMPLETION</p>
+              <h2 id="reviewedPercent">0%</h2>
+            </div>
+            <button class="secondary-btn" id="resetProgress">Reset progress</button>
+          </div>
+          <div class="panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">YOUR CHECKLIST</p>
+                <h3>Semester-wise progress</h3>
+              </div>
+            </div>
+            <div id="progressList" class="progress-list"></div>
+          </div>
+        </section>
+
+        <section class="view" id="resources">
+          <div class="page-title">
+            <p class="eyebrow">STUDY MATERIAL</p>
+            <h2>Resources</h2>
+            <p>Access your syllabus document and useful study tools.</p>
+          </div>
+          <div class="resource-grid">
+            <article class="resource-card">
+              <div class="resource-icon">▤</div>
+              <h3>Official syllabus PDF</h3>
+              <p>Open the complete 187-page BE Civil Engineering syllabus supplied for this workspace.</p>
+              <button class="secondary-btn" id="openPdf">Open syllabus PDF →</button>
+            </article>
+            <article class="resource-card">
+              <div class="resource-icon">⌕</div>
+              <h3>Topic search</h3>
+              <p>Search for subjects, modules, topics and other text across the syllabus.</p>
+              <button class="secondary-btn" data-go="syllabus">Search syllabus →</button>
+            </article>
+            <article class="resource-card">
+              <div class="resource-icon">✓</div>
+              <h3>Study tracker</h3>
+              <p>Keep track of the pages you have studied and reviewed.</p>
+              <button class="secondary-btn" data-go="progress">Track progress →</button>
+            </article>
+          </div>
+          <div class="notice">
+            <span>ⓘ</span>
+            <p>The PDF's own book lists and references remain the source of truth. This version does not invent additional recommended books.</p>
+          </div>
+        </section>
+
+        <footer class="footer">
+          <span>RISHI JU</span>
+          <span>MADE FOR YOUR ACADEMIC JOURNEY</span>
+        </footer>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
